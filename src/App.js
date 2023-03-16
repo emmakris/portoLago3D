@@ -1,24 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import { useRef } from 'react';
+import '@google/model-viewer'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const modelRef = useRef()
+    
+      return (
+        <div>
+        <model-viewer
+    src="/models/St_Nicholas.gltf"
+    ios-src=""
+    style = {{width:'100dvw',height:'100dvh',backgroundColor:'#333333'}}
+    alt="St Nicholas PortoLago"
+    shadow-intensity="1"
+    enviroment-image = 'legacy'
+    exposure="0.45"
+    camera-controls
+    auto-rotate
+    ar
+  >
+    <div style={{fontSize:40,color:'white'}}>Saint Nicholas</div>
+  </model-viewer>
+        </div>
   );
 }
 
